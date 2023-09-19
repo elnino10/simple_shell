@@ -135,7 +135,6 @@ void _puts(char *);
 int _putchar(char);
 int _putcharfd(char, int);
 int _putsfd(char *, int);
-void print_error(info_t *, char *);
 
 /*stdout print1 functions*/
 int print_dec(int, int);
@@ -143,6 +142,11 @@ char *dup_char(char *, int, int);
 size_t print_list_dir(const list_t *);
 size_t print_list_t(const list_t *);
 int prt_alias(list_t *);
+
+/*stderr print functions*/
+int err_putchar(char);
+void err_puts(char *);
+void print_err(info_t *, char *);
 
 /*path list*/
 list_t *add_node_end(list_t **, const char *, int);
