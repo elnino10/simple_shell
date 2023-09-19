@@ -169,6 +169,7 @@ char *_memset(char *, char, unsigned int);
 void free_grid(char **);
 void free_list_t(list_t **);
 int free_ptr(void **);
+void *__realloc(void *, unsigned int, unsigned int);
 
 /*history_file functions*/
 int renum_history(info_t *);
@@ -181,6 +182,7 @@ int wrt_history(info_t *);
 void clr_info(info_t *);
 void free_info(info_t *, int);
 void set_info(info_t *, char **);
+ssize_t read_buffer(info_t *, char *, size_t *);
 
 /*shell_helper functions*/
 int interactive_mode(info_t *);
@@ -198,6 +200,7 @@ ssize_t user_input(info_t *);
 ssize_t input_buffer(info_t *, char **, size_t *);
 int is_command(info_t *, char *);
 void sigint_handler(__attribute__((unused))int signal_num);
+int getline_func(info_t *, char **, size_t *);
 
 /*list_chain*/
 void check_list_chain(info_t *, char *, size_t *, size_t, size_t);
