@@ -32,7 +32,6 @@ void set_info(info_t *info, char **argv)
 		info->argv = _strtok_func(info->arg, " \t");
 		if (!info->argv)
 		{
-
 			info->argv = malloc(sizeof(char *) * 2);
 			if (info->argv)
 			{
@@ -44,8 +43,8 @@ void set_info(info_t *info, char **argv)
 			;
 		info->argc = index;
 
-		repl_alias(info);
-		repl_variable(info);
+		/*repl_alias(info);*/
+		/*repl_variable(info);*/
 	}
 }
 

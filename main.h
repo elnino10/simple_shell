@@ -210,8 +210,8 @@ int getline_func(info_t *, char **, size_t *);
 /*list_chain*/
 void check_list_chain(info_t *, char *, size_t *, size_t, size_t);
 int is_list_chain(info_t *, char *, size_t *);
-int repl_alias(info_t *);
-int repl_variable(info_t *);
+/*int repl_alias(info_t *);*/
+/*int repl_variable(info_t *);*/
 
 /*cmd functions*/
 int __exit(info_t *);
