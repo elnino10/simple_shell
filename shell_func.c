@@ -60,10 +60,10 @@ int get_built_in(info_t *info)
 		{"cd", __cd},
 		{"exit", __exit},
 		{"env", __env},
-		{"help", __help},
+		/*{"help", __help},*/
 		{"history", __history},
-		{"setenv", __setenv},
-		{"unsetenv", __unsetenv},
+		/*{"setenv", __setenv},*/
+		/*{"unsetenv", __unsetenv},*/
 		{NULL, NULL}
 	};
 
