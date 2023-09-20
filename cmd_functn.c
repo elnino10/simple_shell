@@ -43,24 +43,6 @@ int __env(info_t *info)
 }
 
 /**
- * __help - changes current directory of process
- * @info: Structure with potential arguments
- *
- * Return: 0
- */
-int __help(info_t *info)
-{
-	char **arg_arr;
-
-	arg_arr = info->argv;
-	_puts("help call works. Function not yet implemented \n");
-	if (0)
-		_puts(*arg_arr);
-
-	return (0);
-}
-
-/**
  * __history - displays history list, one command by line, preceeded
  * with line numbers, starting at 0
  * @info: Structure containing potential arguments. Used to maintain
