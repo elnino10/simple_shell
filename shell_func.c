@@ -50,7 +50,7 @@ int hsh(info_t *info, char **argv)
  * Return: -1 if builtin not found
  *			0 if builtin executed successfully
  *			1 if builtin found but not successful
- *			-2 if builtin signals exit()
+ *			-2 if builtin signals exit
  */
 int get_built_in(info_t *info)
 {
@@ -61,15 +61,18 @@ int get_built_in(info_t *info)
 		{"exit", __exit},
 		{"env", __env},
 		{"history", __history},
-		{NULL, NULL}};
+		{NULL, NULL}
+	};
 
 	for (index = 0; table[index].type; index++)
+	{
 		if (_strcmp(info->argv[0], table[index].type) == 0)
 		{
 			info->line_count++;
 			built_in_ret = table[index].func(info);
 			break;
 		}
+	}
 
 	return (built_in_ret);
 }
@@ -92,8 +95,10 @@ void find_command(info_t *info)
 		info->linecount_flag = 0;
 	}
 	for (i = 0, j = 0; info->arg[i]; i++)
+	{
 		if (!is_delimitter(info->arg[i], " \t\n"))
 			j++;
+	}
 	if (!j)
 		return;
 	cmd_path = path_finder(info, _getenv(info, "PATH="), info->argv[0]);
@@ -104,7 +109,8 @@ void find_command(info_t *info)
 	}
 	else
 	{
-		if ((interactive_mode(info) || _getenv(info, "PATH=") || info->argv[0][0] == '/') && is_command(info, info->argv[0]))
+		if ((interactive_mode(info) || _getenv(info, "PATH=") ||
+		info->argv[0][0] == '/') && is_command(info, info->argv[0]))
 			fork_command(info);
 		else if (*(info->arg) != '\n')
 		{
