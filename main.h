@@ -70,9 +70,11 @@ typedef struct Info_t
 	list_t *env;
 } info_t;
 
-#define _INIT_ \
-{0, 0, 0, 0, 0, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL,\
-	NULL, NULL, NULL}
+#define _INIT_                                                         \
+	{                                                                  \
+		0, 0, 0, 0, 0, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, \
+			NULL, NULL, NULL                                           \
+	}
 
 /**
  *struct built_in - contains built-in string
@@ -91,20 +93,19 @@ typedef struct built_in
 #define WRITE_BUFFER_SZ 1024
 #define BUFFER_FLUSH -1
 
-#define HIST_FILE	".simple_shell_history"
-#define MAX_HISTORY	4096
+#define HIST_FILE ".simple_shell_history"
+#define MAX_HISTORY 4096
 
 /*command chains*/
-#define NORM_CMD	0
-#define OR_CMD		1
-#define AND_CMD		2
-#define CHAIN_CMD	3
+#define NORM_CMD 0
+#define OR_CMD 1
+#define AND_CMD 2
+#define CHAIN_CMD 3
 
 #define USE_GETLINE 0
 
-#define LOWERCASE_CONVERTER	1
-#define UNSIGNED_CONVERTER	2
-
+#define LOWERCASE_CONVERTER 1
+#define UNSIGNED_CONVERTER 2
 
 extern char **environ;
 
@@ -204,7 +205,7 @@ int __env(info_t *);
 ssize_t user_input(info_t *);
 ssize_t input_buffer(info_t *, char **, size_t *);
 int is_command(info_t *, char *);
-void sigint_handler(__attribute__((unused))int signal_num);
+void sigint_handler(__attribute__((unused)) int signal_num);
 int getline_func(info_t *, char **, size_t *);
 
 /*list_chain*/
@@ -216,7 +217,6 @@ int is_list_chain(info_t *, char *, size_t *);
 /*cmd functions*/
 int __exit(info_t *);
 int __env(info_t *);
-int __help(info_t *);
 int __history(info_t *);
 
 /*cmd functions2*/
@@ -226,4 +226,3 @@ int set_alias(info_t *, char *);
 int reset_alias(info_t *, char *);
 
 #endif
-
