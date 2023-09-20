@@ -56,7 +56,7 @@ int __cd(info_t *info)
 		chdir_ret_val =
 			chdir((dir = _getenv(info, "OLDPWD=")) ? dir : "/");
 	}
-        else
+	else
 		chdir_ret_val = chdir(info->argv[1]);
 	if (chdir_ret_val == -1)
 	{

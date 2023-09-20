@@ -21,7 +21,7 @@ char *start_str(const char *str, const char *needle)
  **_strchr - finds character in a string
  *@str: the string to be parsed
  *@ch: the character to look for
-
+ *
  *Return: pointer to the memory area str
  */
 char *_strchr(char *str, char ch)

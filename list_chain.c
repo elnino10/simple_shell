@@ -1,20 +1,18 @@
-st_chain.c
-—-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
 #include "main.h"
 
-	/**
-	 * check_list_chain - checks to continue chaining based on previous status
-	 * @info: parameter struct
-	 * @buff: char buffer
-	 * @curr_pos: address of current position in buf
-	 * @index: starting position in buff
-	 * @length: length of buff
-	 *
-	 * Return: nothing
-	 */
-	void
-	check_list_chain(info_t *info, char *buff, size_t *curr_pos,
-					 size_t index, size_t length)
+/**
+ * check_list_chain - checks to continue chaining based on previous
+ * status
+ * @info: parameter struct
+ * @buff: char buffer
+ * @curr_pos: address of current position in buf
+ * @index: starting position in buff
+ * @length: length of buff
+ *
+ * Return: nothing
+ */
+void check_list_chain(info_t *info, char *buff, size_t *curr_pos,
+		size_t index, size_t length)
 {
 	size_t i = *curr_pos;
 
@@ -128,20 +126,20 @@ int repl_variable(info_t *info)
 		if (!_strcmp(info->argv[i], "$?"))
 		{
 			replace_str(&(info->argv[i]),
-						_strdup(convert_num(info->status, 10, 0)));
+					_strdup(convert_num(info->status, 10, 0)));
 			continue;
 		}
 		if (!_strcmp(info->argv[i], "$$"))
 		{
 			replace_str(&(info->argv[i]),
-						_strdup(convert_num(getpid(), 10, 0)));
+					_strdup(convert_num(getpid(), 10, 0)));
 			continue;
 		}
 		list = node_prefix(info->env, &info->argv[i][1], '=');
 		if (list)
 		{
 			replace_str(&(info->argv[i]),
-						_strdup(_strchr(list->dir, '=') + 1));
+					_strdup(_strchr(list->dir, '=') + 1));
 			continue;
 		}
 		replace_str(&info->argv[i], _strdup(""));

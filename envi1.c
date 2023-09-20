@@ -1,12 +1,10 @@
-
-—-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
 #include "main.h"
 
 	/**
 	 * create_env_list - creates env linked list
-	 * @info: Structure containing potential arguments. Used to maintain
-	 *      	constant function prototype.
-	 * Return: Always 0
+	 * @info: Structure containing potential arguments
+	 *
+	 * Return: 0
 	 */
 	int
 	create_env_list(info_t *info)
@@ -87,8 +85,7 @@ char *_getenv(info_t *info, const char *name)
 
 /**
  * get_env - returns string array of our environment variables
- * @info: Structure containing potential arguments for maintaining
- *      	constant function prototype.
+ * @info: Structure containing potential arguments
  *
  * Return: 0
  */
@@ -104,8 +101,7 @@ char **get_env(info_t *info)
 }
 
 /**
- * _setenv - sets a new environment variable
- *         	or modify an existing one
+ * _setenv - sets a new environment variable or modifies existing one
  * @info: Structure containing potential arguments
  * @var: string environment variable property
  * @val: string environment variable value
