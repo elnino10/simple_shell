@@ -218,10 +218,8 @@ int __exit(info_t *);
 int __env(info_t *);
 int __help(info_t *);
 int __history(info_t *);
-/*int __setenv(info_t *);*/
 
 /*cmd functions2*/
-/*int __unsetenv(info_t *);*/
 int __cd(info_t *);
 int __alias(info_t *info);
 int set_alias(info_t *, char *);

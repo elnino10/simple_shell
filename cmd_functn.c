@@ -74,23 +74,3 @@ int __history(info_t *info)
 
 	return (0);
 }
-
-/**
- * __setenv - sets new environment variable,
- * or modify existing one
- * @info: Structure containing potential arguments
- *
- * Return: 0
- */
-int __setenv(info_t *info)
-{
-	if (info->argc != 3)
-	{
-		_puts("Incorrect number of arguements\n");
-		return (1);
-	}
-	if (_setenv(info, info->argv[1], info->argv[2]))
-		return (0);
-
-	return (1);
-}

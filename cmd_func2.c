@@ -1,27 +1,6 @@
 #include "main.h"
 
 /**
- * __unsetenv - unsets environment variable
- * @info: Structure containing potential arguments
- *
- *  Return: 0
- */
-int __unsetenv(info_t *info)
-{
-	int index;
-
-	if (info->argc == 1)
-	{
-		_puts("Too few arguments.\n");
-		return (1);
-	}
-	for (index = 1; index <= info->argc; index++)
-		_unsetenv(info, info->argv[index]);
-
-	return (0);
-}
-
-/**
  * __cd - changes current directory of process
  * @info: Structure containing potential arguments
  *
