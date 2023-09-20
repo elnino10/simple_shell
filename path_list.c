@@ -6,7 +6,7 @@
  * @str: str field of node
  * @num: node index used by history
  *
- * Return: pointer to list
+ * Return: pointer to lists
  */
 list_t *add_node_end(list_t **head, const char *str, int num)
 {
