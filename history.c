@@ -1,14 +1,12 @@
-story_file.c
 #include "main.h"
 
-	/**
-	 * rd_history - reads history from file
-	 * @info: the parameter struct
-	 *
-	 * Return: histcount on success, 0 otherwise
-	 */
-	int
-	rd_history(info_t *info)
+/**
+ * rd_history - reads history from file
+ * @info: the parameter struct
+ *
+ * Return: histcount on success, 0 otherwise
+ */
+int rd_history(info_t *info)
 {
 	int line_count = 0, last = 0, i;
 	ssize_t fd, readlen, filesize = 0;

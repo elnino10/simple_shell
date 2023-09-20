@@ -114,7 +114,7 @@ void find_command(info_t *info)
 		else if (*(info->arg) != '\n')
 		{
 			info->status = 127;
-			print_error(info, "not found\n");
+			print_err(info, "not found\n");
 		}
 	}
 }
@@ -153,7 +153,7 @@ void fork_command(info_t *info)
 		{
 			info->status = WEXITSTATUS(info->status);
 			if (info->status == 126)
-				print_error(info, "Permission denied\n");
+				print_err(info, "Permission denied\n");
 		}
 	}
 }

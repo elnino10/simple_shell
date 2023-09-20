@@ -18,16 +18,16 @@ int main(int argc, char **argv)
 			: "r" (fd));
 	if (argc == 2)
 	{
-		fd = open(av[1], O_RDONLY);
+		fd = open(argv[1], O_RDONLY);
 		if (fd == -1)
 		{
 			if (errno == EACCES)
 				exit(126);
 			if (errno == ENOENT)
 			{
-				_puts(av[0]);
+				_puts(argv[0]);
 				_puts(": 0: Can't open ");
-				_puts(av[1]);
+				_puts(argv[1]);
 				_putchar('\n');
 				_putchar(BUFFER_FLUSH);
 				exit(127);
