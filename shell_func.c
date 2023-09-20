@@ -60,12 +60,8 @@ int get_built_in(info_t *info)
 		{"cd", __cd},
 		{"exit", __exit},
 		{"env", __env},
-		/*{"help", __help},*/
 		{"history", __history},
-		/*{"setenv", __setenv},*/
-		/*{"unsetenv", __unsetenv},*/
-		{NULL, NULL}
-	};
+		{NULL, NULL}};
 
 	for (index = 0; table[index].type; index++)
 		if (_strcmp(info->argv[0], table[index].type) == 0)
@@ -108,8 +104,7 @@ void find_command(info_t *info)
 	}
 	else
 	{
-		if ((interactive_mode(info) || _getenv(info, "PATH=")
-					|| info->argv[0][0] == '/') && is_command(info, info->argv[0]))
+		if ((interactive_mode(info) || _getenv(info, "PATH=") || info->argv[0][0] == '/') && is_command(info, info->argv[0]))
 			fork_command(info);
 		else if (*(info->arg) != '\n')
 		{
@@ -157,4 +152,3 @@ void fork_command(info_t *info)
 		}
 	}
 }
-
